@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://m6zdpd.csb.app/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/vendors~embed~sandbox-startup.94f8a764c.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/default~app~embed~sandbox~sandbox-startup.2de838cbd.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/sandbox-startup.3c3db592a.js.transferir"></script><link href="https://codesandbox.io/static/js/babel.7.21.8.min.js" rel="prefetch" as="script">
+
+<script src="./Our Love Story ❤️ finalizado_files/browserfs.min.js.transferir" type="text/javascript"></script>
+
+<script>
+  window.process = BrowserFS.BFSRequire('process');
+  window.Buffer = BrowserFS.BFSRequire('buffer').Buffer;
+</script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story ❤️</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #0a0a0a;
+        color: white;
+        font-family: "Inter", "Segoe UI", sans-serif;
+        overflow-x: hidden;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+      }
+      .nav-logo {
+        color: #ff004f;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: -1px;
+      }
+      .nav-right {
+        color: #ccc;
+        font-size: 12px;
+      }
+
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a0015, #0a0a0a);
+      }
+      .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://i.postimg.cc/MK7P0Kr9/wmremove-transformed.png");
+        background-size: cover;
+        background-position: center center;
+        opacity: 0.6;
+      }
+      .hero-grad-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 65%;
+        background: linear-gradient(transparent, #0a0a0a);
+        z-index: 2;
+      }
+      .hero-grad-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(10, 0, 10, 0.85),
+          transparent
+        );
+        z-index: 2;
+      }
+      .hero-content {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        z-index: 5;
+        max-width: 520px;
+      }
+      .hero-tag {
+        color: #ff4d8d;
+        font-size: 10px;
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .hero-title {
+        font-size: clamp(36px, 10vw, 78px);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -2px;
+        margin-bottom: 10px;
+      }
+      .hero-title span {
+        color: #ff004f;
+        text-shadow: 0 0 40px rgba(255, 0, 79, 0.4);
+      }
+      .hero-desc {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        max-width: 420px;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn-play {
+        background: white;
+        color: #000;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn-info {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .hero-counter {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        z-index: 5;
+        background: rgba(255, 77, 141, 0.1);
+        border: 1px solid rgba(255, 77, 141, 0.3);
+        border-radius: 12px;
+        padding: 10px 14px;
+        text-align: center;
+      }
+      .counter-lbl {
+        color: #888;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 4px;
+      }
+      .counter-val {
+        color: #ff4d8d;
+        font-size: 13px;
+        font-weight: 900;
+      }
+      .video-badge {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        z-index: 5;
+        background: rgba(255, 0, 79, 0.15);
+        border: 1px solid rgba(255, 0, 79, 0.4);
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 10px;
+        color: #ff4d8d;
+        letter-spacing: 2px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ff004f;
+        animation: pulse 1.2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(0.7);
+        }
+      }
+
+      .catalog-section {
+        padding: 24px 16px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .mes-label {
+        color: #ff4d8d;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: 700;
+      }
+      .mes-titulo {
+        font-size: 20px;
+        font-weight: 800;
+        margin-top: 6px;
+        margin-bottom: 14px;
+      }
+      .fotos-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding-bottom: 10px;
+      }
+      .foto-card {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/3;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s, transform 0.3s;
+      }
+      .foto-card:hover {
+        border-color: #ff4d8d;
+        transform: scale(1.03);
+      }
+      .foto-card:active {
+        border-color: #ff4d8d;
+        transform: scale(0.97);
+      }
+      .foto-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s;
+      }
+      .foto-card:hover img {
+        transform: scale(1.08);
+      }
+      .foto-desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.92));
+        color: white;
+        padding: 20px 10px 10px;
+        font-size: 12px;
+        line-height: 1.4;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .foto-card:hover .foto-desc,
+      .foto-card:active .foto-desc {
+        opacity: 1;
+      }
+
+      .videos-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px 16px 40px;
+      }
+      .video-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #1a1a1a;
+        border: 1px solid rgba(255, 77, 141, 0.15);
+      }
+
+      .gatinho-wrapper {
+        padding: 10px 16px 50px;
+      }
+      .gatinho-card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 77, 141, 0.2);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 77, 141, 0.06),
+          rgba(255, 0, 79, 0.03)
+        );
+      }
+      .gatinho-foto {
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+      }
+      .gatinho-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gatinho-msg {
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .estresse-section {
+        margin: 20px 16px;
+        padding: 30px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 77, 141, 0.07),
+          rgba(255, 0, 79, 0.04)
+        );
+        border: 1px solid rgba(255, 77, 141, 0.2);
+        border-radius: 20px;
+        text-align: center;
+      }
+      .estresse-titulo {
+        color: #ff4d8d;
+        font-size: 12px;
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .estresse-nivel {
+        font-size: 60px;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .estresse-barra-bg {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 99px;
+        height: 16px;
+        margin: 14px 0 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 77, 141, 0.2);
+      }
+      .estresse-barra {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(to right, #ff4d8d, #ff004f);
+        border-radius: 99px;
+        transition: width 0.4s ease;
+      }
+      .estresse-status {
+        font-size: 14px;
+        color: #aaa;
+        margin-bottom: 22px;
+        min-height: 22px;
+      }
+      .estresse-btns {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .btn-estresse {
+        padding: 12px 20px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 77, 141, 0.3);
+        background: rgba(255, 77, 141, 0.08);
+        color: white;
+        transition: background 0.2s;
+      }
+      .btn-estresse:active {
+        background: rgba(255, 77, 141, 0.25);
+      }
+      .estresse-msg {
+        display: none;
+        background: rgba(255, 0, 79, 0.08);
+        border: 1px solid rgba(255, 0, 79, 0.2);
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: 14px;
+        color: white;
+        line-height: 1.7;
+        margin-top: 8px;
+      }
+
+      .carta-section {
+        margin: 20px 16px;
+        padding: 30px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 77, 141, 0.07),
+          rgba(255, 0, 79, 0.04)
+        );
+        border: 1px solid rgba(255, 77, 141, 0.2);
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .reclamacoes-section {
+        margin: 20px 16px 10px;
+      }
+      .reclamacoes-header {
+        text-align: center;
+        padding: 30px 10px 20px;
+      }
+      .reclamacoes-header p {
+        color: #ff4d8d;
+        font-size: 11px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .reclamacoes-header h2 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .reclamacoes-header small {
+        color: #666;
+        font-size: 12px;
+      }
+      .reclamacoes-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .reclamacao-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 77, 141, 0.06),
+          rgba(255, 0, 79, 0.03)
+        );
+        border: 1px solid rgba(255, 77, 141, 0.15);
+        border-radius: 14px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        transition: border-color 0.3s, transform 0.2s;
+        cursor: default;
+      }
+      .reclamacao-card:hover {
+        border-color: #ff4d8d;
+        transform: scale(1.01);
+      }
+      .reclamacao-num {
+        color: #ff004f;
+        font-size: 13px;
+        font-weight: 900;
+        min-width: 28px;
+        padding-top: 1px;
+      }
+      .reclamacao-txt {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.6;
+      }
+      .reclamacoes-footer {
+        text-align: center;
+        margin-top: 24px;
+        padding: 20px;
+        background: rgba(255, 77, 141, 0.05);
+        border: 1px solid rgba(255, 77, 141, 0.15);
+        border-radius: 14px;
+        font-size: 14px;
+        color: #aaa;
+        line-height: 1.8;
+      }
+      .reclamacoes-footer strong {
+        color: #ff4d8d;
+      }
+
+      /* GLOBO */
+      .globo-section {
+        padding: 40px 16px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        text-align: center;
+      }
+      .globo-label {
+        color: #ff4d8d;
+        font-size: 11px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .globo-titulo {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .globo-sub {
+        color: #666;
+        font-size: 13px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+      .globe-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: grab;
+        box-shadow: 0 0 60px rgba(255, 0, 79, 0.3),
+          0 0 0 1px rgba(255, 77, 141, 0.3);
+        background: #0a0005;
+        user-select: none;
+        margin: 0 auto;
+      }
+      .globe-container:active {
+        cursor: grabbing;
+      }
+      .globe-inner {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+        will-change: transform;
+      }
+      .globe-photo {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+        border-radius: 4px;
+        filter: brightness(0.85);
+        transition: filter 0.3s;
+      }
+      .globe-photo:hover {
+        filter: brightness(1.1);
+      }
+      .globe-overlay {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            rgba(0, 0, 0, 0.5) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+        z-index: 2;
+      }
+      .globe-edge {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7),
+          inset 0 0 80px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+        z-index: 3;
+      }
+      .globe-badge {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 0, 79, 0.2);
+        border: 1px solid rgba(255, 77, 141, 0.5);
+        border-radius: 99px;
+        padding: 6px 14px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #ff4d8d;
+        pointer-events: none;
+        z-index: 4;
+        white-space: nowrap;
+        opacity: 0.9;
+      }
+      .globe-hint {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #444;
+        letter-spacing: 1px;
+      }
+      .foto-destaque {
+        margin: 24px auto 0;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 77, 141, 0.2);
+        background: rgba(255, 77, 141, 0.04);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(10px);
+      }
+      .foto-destaque.visivel {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .foto-destaque img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+      .foto-destaque-info {
+        padding: 12px 14px;
+      }
+      .foto-destaque-info p {
+        font-size: 11px;
+        color: #ff4d8d;
+        letter-spacing: 3px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .foto-destaque-info h3 {
+        font-size: 14px;
+        font-weight: 800;
+        color: white;
+      }
+
+      /* RASPADINHA */
+      .raspadinha-section {
+        margin: 40px 16px 10px;
+        text-align: center;
+      }
+      .raspadinha-header {
+        padding: 30px 10px 24px;
+      }
+      .raspadinha-header p {
+        color: #ff4d8d;
+        font-size: 11px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .raspadinha-header h2 {
+        font-size: 26px;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .raspadinha-header small {
+        color: #666;
+        font-size: 13px;
+        line-height: 1.6;
+        display: block;
+      }
+      .raspadinha-wrapper {
+        position: relative;
+        max-width: 340px;
+        margin: 0 auto 28px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 0 60px rgba(255, 0, 79, 0.25),
+          0 0 0 1px rgba(255, 77, 141, 0.3);
+      }
+      .raspadinha-foto {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        display: block;
+      }
+      #scratch-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: crosshair;
+        touch-action: none;
+        border-radius: 18px;
+      }
+      .raspadinha-badge {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 0, 79, 0.18);
+        border: 1px solid rgba(255, 0, 79, 0.5);
+        border-radius: 99px;
+        padding: 5px 14px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: #ff4d8d;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 3;
+      }
+      .raspadinha-progress {
+        margin: 0 auto 16px;
+        max-width: 340px;
+      }
+      .progress-bar-bg {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 99px;
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+      .progress-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(to right, #ff4d8d, #ff004f);
+        border-radius: 99px;
+        transition: width 0.2s ease;
+      }
+      .progress-label {
+        font-size: 11px;
+        color: #555;
+        letter-spacing: 1px;
+      }
+      .btn-reset-scratch {
+        background: rgba(255, 77, 141, 0.08);
+        border: 1px solid rgba(255, 77, 141, 0.25);
+        color: #ff4d8d;
+        padding: 9px 22px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-bottom: 32px;
+        transition: background 0.2s;
+      }
+      .btn-reset-scratch:hover {
+        background: rgba(255, 77, 141, 0.18);
+      }
+      .raspadinha-mensagem {
+        max-width: 520px;
+        margin: 0 auto 20px;
+        padding: 28px 24px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 77, 141, 0.08),
+          rgba(255, 0, 79, 0.04)
+        );
+        border: 1px solid rgba(255, 77, 141, 0.25);
+        border-radius: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        pointer-events: none;
+      }
+      .raspadinha-mensagem.visivel {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .raspadinha-mensagem .msg-icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      .raspadinha-mensagem .msg-titulo {
+        color: #ff4d8d;
+        font-size: 11px;
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .raspadinha-mensagem .msg-texto {
+        font-size: 15px;
+        color: #ccc;
+        line-height: 1.9;
+        white-space: pre-line;
+      }
+      .raspadinha-mensagem .msg-corações {
+        margin-top: 20px;
+        font-size: 22px;
+        letter-spacing: 6px;
+      }
+
+      /* =============================================
+       SEÇÃO EVENTO DE CARROS — LOADING / COUNTDOWN
+       ============================================= */
+      .car-event-section {
+        margin: 0 16px 40px;
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid rgba(255, 160, 0, 0.25);
+        background: linear-gradient(135deg, #0a0a00, #0d0800, #0a0a0a);
+      }
+
+      /* fundo com trilha de pneu animada */
+      .car-event-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .car-event-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 48px,
+            rgba(255, 160, 0, 0.04) 48px,
+            rgba(255, 160, 0, 0.04) 50px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 48px,
+            rgba(255, 160, 0, 0.04) 48px,
+            rgba(255, 160, 0, 0.04) 50px
+          );
+      }
+      .car-event-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(255, 140, 0, 0.12) 0%,
+          transparent 70%
+        );
+      }
+
+      /* pista animada no fundo */
+      .track-lines {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .track-lines::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 300%;
+        height: 3px;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(255, 200, 0, 0.6) 0,
+          rgba(255, 200, 0, 0.6) 30px,
+          transparent 30px,
+          transparent 60px
+        );
+        animation: trackScroll 3s linear infinite;
+      }
+      @keyframes trackScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(33.33%);
+        }
+      }
+
+      .car-event-inner {
+        position: relative;
+        z-index: 2;
+        padding: 40px 24px 44px;
+        text-align: center;
+      }
+
+      /* Badge LOADING */
+      .car-loading-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 140, 0, 0.12);
+        border: 1px solid rgba(255, 140, 0, 0.4);
+        border-radius: 99px;
+        padding: 6px 16px;
+        margin-bottom: 22px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: #ffa500;
+      }
+      .loading-dots {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .loading-dots span {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ffa500;
+        display: inline-block;
+        animation: dotBounce 1.2s ease-in-out infinite;
+      }
+      .loading-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .loading-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes dotBounce {
+        0%,
+        80%,
+        100% {
+          transform: scale(0.6);
+          opacity: 0.4;
+        }
+        40% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Ícone carro animado */
+      .car-icon-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 18px;
+      }
+      .car-emoji {
+        font-size: 64px;
+        display: block;
+        animation: carShake 0.5s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.5));
+      }
+      @keyframes carShake {
+        0% {
+          transform: translateX(-4px) rotate(-1deg);
+        }
+        100% {
+          transform: translateX(4px) rotate(1deg);
+        }
+      }
+      .car-speed-lines {
+        position: absolute;
+        left: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .car-speed-lines span {
+        display: block;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 140, 0, 0.7)
+        );
+        border-radius: 99px;
+        animation: speedLine 0.8s ease-out infinite;
+      }
+      .car-speed-lines span:nth-child(1) {
+        width: 30px;
+        animation-delay: 0s;
+      }
+      .car-speed-lines span:nth-child(2) {
+        width: 20px;
+        animation-delay: 0.15s;
+      }
+      .car-speed-lines span:nth-child(3) {
+        width: 25px;
+        animation-delay: 0.3s;
+      }
+      @keyframes speedLine {
+        0% {
+          opacity: 0;
+          transform: translateX(10px);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-10px);
+        }
+      }
+
+      .car-event-label {
+        color: #ffa500;
+        font-size: 11px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .car-event-title {
+        font-size: clamp(22px, 6vw, 36px);
+        font-weight: 900;
+        letter-spacing: -1px;
+        margin-bottom: 10px;
+        line-height: 1.1;
+      }
+      .car-event-title span {
+        color: #ffa500;
+        text-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+      }
+      .car-event-desc {
+        font-size: 14px;
+        color: #aaa;
+        line-height: 1.7;
+        margin-bottom: 32px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Contador regressivo do evento */
+      .car-countdown-wrapper {
+        margin-bottom: 28px;
+      }
+      .car-countdown-lbl {
+        font-size: 10px;
+        letter-spacing: 4px;
+        color: #666;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .car-countdown-grid {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .car-cd-box {
+        background: rgba(255, 140, 0, 0.08);
+        border: 1px solid rgba(255, 140, 0, 0.3);
+        border-radius: 14px;
+        padding: 14px 16px 10px;
+        min-width: 68px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .car-cd-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #ffa500,
+          transparent
+        );
+      }
+      .car-cd-num {
+        font-size: 32px;
+        font-weight: 900;
+        color: #ffa500;
+        line-height: 1;
+        display: block;
+        font-variant-numeric: tabular-nums;
+        text-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+      }
+      .car-cd-unit {
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: #555;
+        font-weight: 700;
+        display: block;
+        margin-top: 4px;
+      }
+
+      /* Barra de progresso do evento */
+      .car-progress-wrapper {
+        max-width: 340px;
+        margin: 0 auto 22px;
+      }
+      .car-progress-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #555;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .car-progress-bar-bg {
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 99px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 140, 0, 0.15);
+      }
+      .car-progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(to right, #ff8c00, #ffa500, #ffd700);
+        border-radius: 99px;
+        transition: width 1s ease;
+        position: relative;
+      }
+      .car-progress-bar-fill::after {
+        content: "🏎️";
+        position: absolute;
+        right: -2px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      /* Data do evento */
+      .car-event-date-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 140, 0, 0.15),
+          rgba(255, 200, 0, 0.08)
+        );
+        border: 1px solid rgba(255, 140, 0, 0.4);
+        border-radius: 12px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #ffd700;
+        letter-spacing: 1px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 16px 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #444;
+        font-size: 13px;
+        margin-top: 20px;
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          padding: 22px 50px;
+        }
+        .nav-logo {
+          font-size: 28px;
+        }
+        .hero-content {
+          bottom: 80px;
+          left: 50px;
+          right: auto;
+        }
+        .hero-tag {
+          font-size: 12px;
+          letter-spacing: 6px;
+        }
+        .hero-desc {
+          font-size: 16px;
+        }
+        .btn-play,
+        .btn-info {
+          padding: 13px 30px;
+          font-size: 16px;
+        }
+        .hero-counter {
+          top: auto;
+          bottom: 80px;
+          right: 50px;
+          padding: 14px 20px;
+        }
+        .counter-val {
+          font-size: 16px;
+        }
+        .counter-lbl {
+          font-size: 11px;
+        }
+        .video-badge {
+          top: 80px;
+          right: 50px;
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+        .catalog-section {
+          padding: 40px 50px 20px;
+        }
+        .mes-titulo {
+          font-size: 26px;
+        }
+        .fotos-row {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 14px;
+        }
+        .videos-grid {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 20px 50px 60px;
+        }
+        .gatinho-wrapper {
+          padding: 20px 50px 70px;
+        }
+        .gatinho-card {
+          flex-direction: row;
+          max-width: 780px;
+          margin: 0 auto;
+        }
+        .gatinho-foto {
+          width: 300px;
+          height: auto;
+          min-height: 280px;
+          flex-shrink: 0;
+        }
+        .gatinho-msg {
+          padding: 40px 36px;
+        }
+        .estresse-section {
+          max-width: 780px;
+          margin: 60px auto;
+          padding: 50px 60px;
+        }
+        .estresse-nivel {
+          font-size: 72px;
+        }
+        .carta-section {
+          max-width: 780px;
+          margin: 60px auto;
+          padding: 50px 60px;
+        }
+        .reclamacoes-section {
+          max-width: 860px;
+          margin: 40px auto;
+        }
+        .reclamacoes-header h2 {
+          font-size: 32px;
+        }
+        .reclamacoes-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
+        }
+        .reclamacao-card {
+          padding: 18px 22px;
+        }
+        .reclamacao-txt {
+          font-size: 15px;
+        }
+        .globo-section {
+          max-width: 860px;
+          margin: 0 auto;
+          padding: 60px 50px 40px;
+        }
+        .globo-titulo {
+          font-size: 32px;
+        }
+        .globe-container {
+          width: 360px;
+          height: 360px;
+        }
+        .globe-photo {
+          width: 120px;
+          height: 120px;
+        }
+        .raspadinha-section {
+          max-width: 860px;
+          margin: 40px auto;
+        }
+        .raspadinha-header h2 {
+          font-size: 32px;
+        }
+        .raspadinha-wrapper {
+          max-width: 380px;
+        }
+        .car-event-section {
+          max-width: 860px;
+          margin: 40px auto 60px;
+        }
+        .car-event-inner {
+          padding: 60px 50px 60px;
+        }
+        .car-cd-num {
+          font-size: 42px;
+        }
+        .car-cd-box {
+          min-width: 88px;
+          padding: 18px 20px 12px;
+        }
+        .car-event-title {
+          font-size: 42px;
+        }
+      }
+    </style>
+    <link rel="manifest" href="https://m6zdpd.csb.app/manifest.json">
+  <script charset="utf-8" src="./Our Love Story ❤️ finalizado_files/0.135d2e844.chunk.js.transferir"></script><script charset="utf-8" src="./Our Love Story ❤️ finalizado_files/1.390d5cd6d.chunk.js.transferir"></script><script charset="utf-8" src="./Our Love Story ❤️ finalizado_files/2.ad523836f.chunk.js.transferir"></script><script charset="utf-8" src="./Our Love Story ❤️ finalizado_files/7.c29658eb4.chunk.js.transferir"></script></head>
+  <body>
+    <nav>
+      <div class="nav-logo">LOVE<span style="color: white">FLIX</span></div>
+      <div class="nav-right">❤️ Nossa História</div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-img"></div>
+      <div class="hero-grad-bottom"></div>
+      <div class="hero-grad-left"></div>
+      <div class="video-badge">
+        <div class="dot"></div>
+        NOSSA HISTÓRIA ❤️
+      </div>
+      <div class="hero-content">
+        <p class="hero-tag">❤️ NOSSA HISTÓRIA</p>
+        <h1 class="hero-title">OUR<br><span>LOVE</span><br>STORY</h1>
+        <p class="hero-desc">
+          Uma história de amor contada em cada sorriso, cada abraço e cada
+          momento especial que vivemos juntos. 🌹
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-play">▶ &nbsp;Assistir</button>
+          <button class="btn-info">ℹ &nbsp;Nossa história</button>
+        </div>
+      </div>
+      <div class="hero-counter">
+        <p class="counter-lbl">JUNTOS HÁ</p>
+        <div class="counter-val" id="counter">183d • 3h • 12m • 43s ❤️</div>
+      </div>
+    </section>
+
+    <div id="catalogo">
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 1 ❤️</p>
+        <h2 class="mes-titulo">Dezembro — Onde tudo começou</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/d0d01428-8e44-479c-a5ec-1c53513d7a71.jpg" loading="lazy"><div class="foto-desc">Me apaixonar por você</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/25f23067-39a8-4b53-a5a8-6c563043ef6a.jpg" loading="lazy"><div class="foto-desc">Foi a coisa mais fácil</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-2488.jpg" loading="lazy"><div class="foto-desc">Que eu já fiz na vida</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-2515.jpg" loading="lazy"><div class="foto-desc">Não precisei procurar motivos</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-2603.jpg" loading="lazy"><div class="foto-desc">Simplesmente aconteceu</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 2 💕</p>
+        <h2 class="mes-titulo">Janeiro — Cada dia mais juntos e grudados</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/60d70dd3-876a-449f-8e86-d7ecd7d3158b.jpg" loading="lazy"><div class="foto-desc">Aos poucos</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/3736d8dd-228c-49d5-9e96-93043226baf1.jpg" loading="lazy"><div class="foto-desc">Eu fui percebendo</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/c98e0246-43a2-4cd2-a260-1e244165dfa0.jpg" loading="lazy"><div class="foto-desc">Que havia algo diferente</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/C47-CC234-4-CC3-4-B58-98-AB-6-D1-FC4899-B44.jpg" loading="lazy"><div class="foto-desc">Em você</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/2b004e80-7c7e-4aaf-9b0e-f1c933d73cb4.jpg" loading="lazy"><div class="foto-desc">Não foi pela sua aparência</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 3 🌸</p>
+        <h2 class="mes-titulo">Fevereiro — Nossa primeira viagem juntos</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/9b1e7421-de39-44bb-a1bc-afb2fa41f61b.jpg" loading="lazy"><div class="foto-desc">Nem por algo superficial</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/bd663998-c10a-4fe4-9743-2521cee66a83.jpg" loading="lazy"><div class="foto-desc">Foi pelo seu jeito</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3205.jpg" loading="lazy"><div class="foto-desc">Pela forma como você fala</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3435.jpg" loading="lazy"><div class="foto-desc">E pelo sorriso que sempre consegue iluminar</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3509.jpg" loading="lazy"><div class="foto-desc">Até os meus dias mais difíceis</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 4 🌹</p>
+        <h2 class="mes-titulo">Março — Mês aonde descobri que não consigo guardar surpresa para você</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/3b324810-6c90-4f0c-8367-981831d6fdc8.jpg" loading="lazy"><div class="foto-desc">Eu me apaixonei pela pessoa que você é</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/1a5a36c9-55a8-41fc-b9cf-cd21a7f25793.jpg" loading="lazy"><div class="foto-desc">Quando ninguém está olhando</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/785-DE28-E-B178-4340-9-B5-B-C58-D3-EAB4-D02.jpg" loading="lazy"><div class="foto-desc">Pela sua essência</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/446278-F5-BAE5-41-F6-ACC5-AACB6-F0549-BF.jpg" loading="lazy"><div class="foto-desc">Pelo seu cuidado</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/ddcfa594-4dee-4905-9aee-9e95c33535ad.jpg" loading="lazy"><div class="foto-desc">Pela calma que você traz quando está por perto</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 5 💖</p>
+        <h2 class="mes-titulo">Abril — Não consegui te desgrudar</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-4435.jpg" loading="lazy"><div class="foto-desc">Antes mesmo de entender</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/ba431e5d-4ec2-4f8b-9ae2-cfb4bb97b27f.jpg" loading="lazy"><div class="foto-desc">O que estava acontecendo</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/c7491fe3-8e4a-4800-b9e2-7cb424d63541.jpg" loading="lazy"><div class="foto-desc">Meu coração já tinha te escolhido</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/f7ed73f8-91c3-46be-a132-612a4b594307.jpg" loading="lazy"><div class="foto-desc">De todos os presentes que a vida poderia me dar</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-4347.jpg" loading="lazy"><div class="foto-desc">Foi você quem o meu coração escolheu e escolheria de novo todas as vezes</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">MÊS 6 🌹</p>
+        <h2 class="mes-titulo">Maio — Cada dia mais ansioso pra viver mais ao seu lado</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/9f45f63f-3621-4569-a413-ea0fa957c9a3.jpg" loading="lazy"><div class="foto-desc">E o mais bonito de tudo</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/b5c1fbda-7403-4cfd-9b77-b7992cbb5690.jpg" loading="lazy"><div class="foto-desc">Seu abraço continua sendo o meu lugar favorito</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/c002801c-a18a-4678-ad76-b915ce99d8c5.jpg" loading="lazy"><div class="foto-desc">Seu sorriso ainda consegue mudar o meu dia</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-4658.jpg" loading="lazy"><div class="foto-desc">E o seu amor continua sendo o melhor presente que a vida me deu</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/Whats-App-Image-2026-05-23-at-17-05-31.jpg" loading="lazy"><div class="foto-desc">Porque estar ao seu lado é onde eu sempre quero estar ❤️</div></div>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <p class="mes-label">🎁 BÔNUS ESPECIAL DAS FOTOS QUE EU MAIS APRECIO! 💝</p>
+        <h2 class="mes-titulo">Momentos que é impossivel a gente esquecer</h2>
+        <div class="fotos-row">
+          <div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3466.jpg" loading="lazy"><div class="foto-desc">Todos os dias admiro sua foto e fico besta com o quão você combina de Amarelo amor</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3760.jpg" loading="lazy"><div class="foto-desc">Ver o quanto você fica feliz nas coisas mais simples</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/84438d73-137e-4ae6-99d1-54f7a4f17dce.jpg" loading="lazy"><div class="foto-desc">Nem nos meus maiores sonhos eu imaginava uma pessoa tão perfeita e gostosa assim</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/IMG-3290.jpg" loading="lazy"><div class="foto-desc">Quero sempre te dizer o quanto eu sou doidinho por você amor</div></div><div class="foto-card"><img src="./Our Love Story ❤️ finalizado_files/16620497-83dc-4dcd-ab32-20584a40c08c.jpg" loading="lazy"><div class="foto-desc">Quero sempre gritar pro mundo inteiro que eu te amo!</div></div>
+        </div>
+      </section></div><div class="globo-section" id="secao-globo">
+      <p class="globo-label">🌍 NOSSO MUNDO</p>
+      <h2 class="globo-titulo">Junho — Dia dos Namorados 💕</h2>
+      <p class="globo-sub">
+        Gire o globo com o dedo ou o mouse<br>e clique em uma foto para ver em
+        destaque 🌹
+      </p>
+      <div class="globe-container" id="globe">
+        <div class="globe-inner" id="globe-inner" style="width: 366px; height: 366px; grid-template-columns: repeat(3, 120px); transform: translate(-3px, -3px);"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-5024.jpg" alt="Feliz Dia dos Namorados, meu amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-4928.jpg" alt="Dia dos Namorados pra mim não é só uma data" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/0e87f6ea-9fc2-448b-8781-5de13ecc32eb.jpg" alt="Pra mim é todos os dias" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/820d469b-7552-46d1-9f34-dc5798f51130.jpg" alt="Você é o meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/3653af1f-c894-4dc1-b5d4-b60c9b3f4148-1.jpg" alt="você é meu mundo" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/16e12632-859f-4559-aa50-0652479f6ae8.jpg" alt="Te amo mais a cada dia" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/b5810651-809c-4cc1-a0e4-cc65b5df96ec.jpg" alt="Nossa só continua meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/8f99e70b-491b-4546-9eeb-bab104021b80.jpg" alt="Feliz Dia dos Namorados, amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/89201f8d-796d-41f1-9044-5cbc8f31a0bb.jpg" alt="Nosso primeiro de muitos amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-5024.jpg" alt="Feliz Dia dos Namorados, meu amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-4928.jpg" alt="Dia dos Namorados pra mim não é só uma data" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/0e87f6ea-9fc2-448b-8781-5de13ecc32eb.jpg" alt="Pra mim é todos os dias" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/820d469b-7552-46d1-9f34-dc5798f51130.jpg" alt="Você é o meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/3653af1f-c894-4dc1-b5d4-b60c9b3f4148-1.jpg" alt="você é meu mundo" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/16e12632-859f-4559-aa50-0652479f6ae8.jpg" alt="Te amo mais a cada dia" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/b5810651-809c-4cc1-a0e4-cc65b5df96ec.jpg" alt="Nossa só continua meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/8f99e70b-491b-4546-9eeb-bab104021b80.jpg" alt="Feliz Dia dos Namorados, amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/89201f8d-796d-41f1-9044-5cbc8f31a0bb.jpg" alt="Nosso primeiro de muitos amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-5024.jpg" alt="Feliz Dia dos Namorados, meu amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/IMG-4928.jpg" alt="Dia dos Namorados pra mim não é só uma data" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/0e87f6ea-9fc2-448b-8781-5de13ecc32eb.jpg" alt="Pra mim é todos os dias" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/820d469b-7552-46d1-9f34-dc5798f51130.jpg" alt="Você é o meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/3653af1f-c894-4dc1-b5d4-b60c9b3f4148-1.jpg" alt="você é meu mundo" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/16e12632-859f-4559-aa50-0652479f6ae8.jpg" alt="Te amo mais a cada dia" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/b5810651-809c-4cc1-a0e4-cc65b5df96ec.jpg" alt="Nossa só continua meu amor" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/8f99e70b-491b-4546-9eeb-bab104021b80.jpg" alt="Feliz Dia dos Namorados, amor!" style="width: 120px; height: 120px;"><img class="globe-photo" src="./Our Love Story ❤️ finalizado_files/89201f8d-796d-41f1-9044-5cbc8f31a0bb.jpg" alt="Nosso primeiro de muitos amor" style="width: 120px; height: 120px;"></div>
+        <div class="globe-overlay"></div>
+        <div class="globe-edge"></div>
+        <div class="globe-badge">💕 JUNHO</div>
+      </div>
+      <p class="globe-hint">↔ arraste para girar</p>
+      <div class="foto-destaque visivel" id="foto-destaque">
+        <img id="destaque-img" src="./Our Love Story ❤️ finalizado_files/89201f8d-796d-41f1-9044-5cbc8f31a0bb.jpg" alt="Foto em destaque">
+        <div class="foto-destaque-info">
+          <p>Nossas fotos já no inicio desse mês</p>
+          <h3 id="destaque-desc">Nosso primeiro de muitos amor</h3>
+        </div>
+      </div>
+    </div><div id="secao-videos"></div>
+
+    <!-- GLOBO DE JUNHO -->
+    
+
+    
+
+    <!-- GATINHO -->
+    <div class="gatinho-wrapper">
+      <div class="gatinho-card">
+        <div class="gatinho-foto">
+          <img src="./Our Love Story ❤️ finalizado_files/4-DFAF4-A1-DBC8-447-C-9558-06-C82-FF91509.jpg" onerror="this.style.background=&#39;#1a1a1a&#39;;this.style.minHeight=&#39;260px&#39;" alt="Fred">
+        </div>
+        <div class="gatinho-msg">
+          <p style="
+              color: #ff4d8d;
+              font-size: 11px;
+              letter-spacing: 4px;
+              font-weight: 700;
+            ">
+            🐾 MEMBRO ESPECIAL DA FAMÍLIA
+          </p>
+          <h2 style="font-size: 24px; font-weight: 900">FRED</h2>
+          <p style="font-size: 14px; color: #bbb; line-height: 1.8">
+            Amo o jeito que vc me incluiu na familia e não posso deixar de dizer
+            o quanto eu amo o Fred como você me ensinou sobre o amor puro dele.
+            Sinto saudades todos os dias dele, as vezes te peço fotos pra saber
+            de como a braveza mais fofa dessa vida está, o jeitinho fofo e bravo
+            que ele lida com as coisas. Não posso deixar de lado o quanto eu amo
+            ele também amor☝️.
+          </p>
+          <div style="font-size: 20px; letter-spacing: 4px">🐾 🐾 🐾</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTRESSE -->
+    <div class="estresse-section">
+      <p class="estresse-titulo">😤 NÍVEL DE ESTRESSE</p>
+      <div class="estresse-nivel" id="estresse-nivel">0%</div>
+      <div class="estresse-barra-bg">
+        <div class="estresse-barra" id="estresse-barra"></div>
+      </div>
+      <p class="estresse-status" id="estresse-status">
+        Tudo tranquilo por aqui... 😌
+      </p>
+      <div class="estresse-btns">
+        <button class="btn-estresse" onclick="aumentarEstresse()">
+          😤 Aumentar estresse
+        </button>
+        <button class="btn-estresse" onclick="zerarEstresse()">
+          🧘 Zerar estresse
+        </button>
+      </div>
+      <div class="estresse-msg" id="estresse-msg">
+        😂 Não é possível zerar o estresse!<br>
+        <span style="color: #aaa; font-size: 13px">Tente novamente em outro momento... ou nunca. 💅</span>
+      </div>
+    </div>
+
+    <!-- CARTA -->
+    <div class="carta-section">
+      <div style="font-size: 34px; margin-bottom: 16px">💌</div>
+      <h2 style="
+          color: #ff4d8d;
+          font-size: 20px;
+          letter-spacing: 4px;
+          font-weight: 700;
+          margin-bottom: 24px;
+        ">
+        PARA VOCÊ
+      </h2>
+      <p style="
+          font-size: 16px;
+          line-height: 1.9;
+          color: #ccc;
+          white-space: pre-line;
+        ">
+        Obrigado por esses dias juntos, obrigado por ser a minha vida, obrigado
+        por ser a pessoa que mais me incentiva a ser melhor todos os dias, e
+        tudo que eu fiz aqui foi pensando em vc amor criado com muito detalhe e
+        carinho para que vc você tivesse um gostinho de saber o quanto ser o seu
+        amor é bom! e o quanto você me orgulha sendo a mulher que você é
+        incrível, forte, batalhadora, resmungona, inteligente, bonita, chatinha,
+        sabida, não importa quantas as vezes eu te diga isso, mas todas as
+        noites eu gosto de te lembrar amor, o quanto vc é perfeita, independente
+        de tudo que venhamos ter no caminho a coisa mais linda que eu tive pra
+        me dar coragem é olhar o quanto eu consigo ser uma pessoa mais forte e
+        feliz ao seu lado e tenho sempre a te agradecer pela mulher que vc é com
+        o seu jeitinho único que me faz sorrir e ver a vida da forma mais linda
+        que existe, o quanto os nossos pequenos momentos se tornam inesquecível,
+        por isso desde de que eu te conheci saberia que você era diferente, uma
+        mulher forte que me encanta todos os dias e te agradeço sempre por você
+        ser assim meu amor, nunca deixe que ninguém acabe com isso que tem no
+        seu coração, essa forma linda e carinhosa que vc tem no seu coração
+        amor, te amo hoje, te amo sempre meu amor quero nessa vida inteira estar
+        ao seu lado realizando todos os nossos sonhos, com todas as dificuldades
+        que a vida trás, mas quero enfrentar elas com você meu amor obrigado por
+        ser essa mulher que você é... Te amo pra uma vida toda!
+      </p>
+      <div style="
+          margin-top: 30px;
+          color: #ff4d8d;
+          font-size: 26px;
+          letter-spacing: 8px;
+        ">
+        ❤ ❤ ❤
+      </div>
+    </div>
+
+    <!-- NÃO É PERFEITA -->
+    <div style="margin: 0 16px 10px; text-align: center">
+      <div style="
+          background: linear-gradient(
+            135deg,
+            rgba(255, 77, 141, 0.07),
+            rgba(255, 0, 79, 0.04)
+          );
+          border: 1px solid rgba(255, 77, 141, 0.2);
+          border-radius: 20px;
+          padding: 30px 20px 24px;
+          max-width: 780px;
+          margin: 0 auto;
+        ">
+        <div style="font-size: 28px; margin-bottom: 14px"></div>
+        <p style="
+            color: #ff4d8d;
+            font-size: 11px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 12px;
+          ">
+          ALIÁS, FALANDO EM PERFEITA...
+        </p>
+        <h2 style="
+            font-size: clamp(16px, 5vw, 22px);
+            font-weight: 900;
+            color: white;
+            line-height: 1.4;
+            margin-bottom: 24px;
+          ">
+          até pq não é de hoje que eu te digo<br>o quanto você não é perfeita
+        </h2>
+        <div style="
+            position: relative;
+            display: inline-block;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 77, 141, 0.3);
+            box-shadow: 0 0 40px rgba(255, 0, 79, 0.2);
+            max-width: 100%;
+          ">
+          <img src="./Our Love Story ❤️ finalizado_files/IMG-5068.png" alt="Prova de que você é sim perfeita" style="
+              display: block;
+              width: 100%;
+              max-width: 480px;
+              height: auto;
+              border-radius: 16px;
+            ">
+        </div>
+        <p style="
+            margin-top: 18px;
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+          ">
+          *Documento oficial. contra provas não há argumentos
+        </p>
+      </div>
+    </div>
+
+    <!-- RECLAMAÇÕES -->
+    <div class="reclamacoes-section">
+      <div class="reclamacoes-header">
+        <p>😤 REGISTRO OFICIAL</p>
+        <h2>Minhas 24 Reclamações<br>Sobre Você 📋</h2>
+        <small>*Documento sério. Muito sério. Totalmente sério.</small>
+      </div>
+      <div class="reclamacoes-grid">
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#01</span><span class="reclamacao-txt">Ela é bonita até sem tentar.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#02</span><span class="reclamacao-txt">Consegue melhorar meu dia só aparecendo.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#03</span><span class="reclamacao-txt">Tem um sorriso que desmonta qualquer raiva.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#04</span><span class="reclamacao-txt">Faz eu rir mesmo quando quero ficar quieto.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#05</span><span class="reclamacao-txt">Me apoia mais do que eu demonstro.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#06</span><span class="reclamacao-txt">Tem o abraço que mais me acalma.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#07</span><span class="reclamacao-txt">Faz os lugares ficarem melhores só por estar neles.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#08</span><span class="reclamacao-txt">Se preocupa comigo até nos detalhes pequenos.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#09</span><span class="reclamacao-txt">Consegue me entender sem eu precisar explicar tudo.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#10</span><span class="reclamacao-txt">Faz eu me sentir importante de verdade.</span>
+        </div>
+        <div class="reclamacao-card" style="border-color: rgba(255, 0, 79, 0.35)">
+          <span class="reclamacao-num">#11</span><span class="reclamacao-txt">A pior de todas: ela virou meu lugar favorito no mundo. 🌍</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#12</span><span class="reclamacao-txt">Me motiva a querer crescer mais.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#13</span><span class="reclamacao-txt">Tem um jeito único que ninguém consegue copiar.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#14</span><span class="reclamacao-txt">Faz até rotina parecer memória boa.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#15</span><span class="reclamacao-txt">Me escuta nos dias em que ninguém percebe que estou cansado.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#16</span><span class="reclamacao-txt">Tem uma presença que traz paz.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#17</span><span class="reclamacao-txt">Me faz acreditar mais em relacionamento tranquilo.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#18</span><span class="reclamacao-txt">Cuida de mim sem parecer obrigação.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#19</span><span class="reclamacao-txt">Me faz sentir escolhido todos os dias.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#20</span><span class="reclamacao-txt">Consegue transformar silêncio em conexão.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#21</span><span class="reclamacao-txt">Tem um coração muito mais bonito que a aparência.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#22</span><span class="reclamacao-txt">Faz eu enxergar valor nas coisas simples.</span>
+        </div>
+        <div class="reclamacao-card">
+          <span class="reclamacao-num">#23</span><span class="reclamacao-txt">Me faz querer construir futuro.</span>
+        </div>
+        <div class="reclamacao-card" style="border-color: rgba(255, 0, 79, 0.35)">
+          <span class="reclamacao-num">#24</span><span class="reclamacao-txt">Tem manias que eu nunca vou cansar de amar. 💕</span>
+        </div>
+      </div>
+      <div class="reclamacoes-footer">
+        <strong>Desenvolvido por Gabriel, vulgo amor da sua vida toda 🫵</strong><br>
+        <span style="font-size: 12px; color: #555">* Todas as reclamações são verídicas e irrecorríveis.<br>Nenhuma
+          delas é de verdade reclamação. ❤️</span>
+      </div>
+    </div>
+
+    <!-- RASPADINHA -->
+    <div class="raspadinha-section">
+      <div class="raspadinha-header">
+        <p>💝 SURPRESA ESPECIAL</p>
+        <h2>Raspe e Descubra ✨</h2>
+        <small>Use o dedo ou o mouse para raspar<br>e revelar a foto mais especial
+          para mim 🥰</small>
+      </div>
+      <div class="raspadinha-wrapper" id="scratch-wrapper">
+        <div class="raspadinha-badge">RASPE AQUI 💕</div>
+        <img class="raspadinha-foto" src="./Our Love Story ❤️ finalizado_files/f3ed1a50-c3f3-4f05-a238-77a285972114.jpg" alt="Foto surpresa" id="scratch-photo" crossorigin="anonymous">
+        <canvas id="scratch-canvas" width="380" height="507"></canvas>
+      </div>
+      <div class="raspadinha-progress">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="scratch-progress" style="width: 0%;"></div>
+        </div>
+        <p class="progress-label" id="scratch-label">Raspe para revelar... ✨</p>
+      </div>
+      <button class="btn-reset-scratch" onclick="resetScratch()">
+        🔄 Recomeçar
+      </button>
+      <div class="raspadinha-mensagem" id="raspadinha-msg">
+        <div class="msg-icon">💌</div>
+        <p class="msg-titulo">PARA VOCÊ MEU AMOR</p>
+        <p class="msg-texto">
+          No final a imagem que mais importa para mim amor, é aquela que eu
+          carrego todos os dias meu amor, você não sabe o quanto essa imagem é
+          importante para mim. Mostra o quanto nos tornamos um só, o quanto te
+          amar é bom, o quanto a vida tem um significado ao seu lado, te amo pra
+          todo sempre...assinado seu branquelo.
+        </p>
+        <div class="msg-corações">❤ ❤ ❤</div>
+      </div>
+    </div>
+
+    <!-- ================================================
+       NOVO — PRÓXIMO EVENTO DE CARROS 🏎️
+       ================================================ -->
+    <div class="car-event-section">
+      <div class="car-event-bg"></div>
+      <div class="track-lines"></div>
+
+      <div class="car-event-inner">
+        <!-- Badge loading -->
+        <div class="car-loading-badge">
+          <span>CARREGANDO PRÓXIMO EVENTO</span>
+          <div class="loading-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Ícone carro -->
+        <div class="car-icon-wrapper">
+          <div class="car-speed-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="car-emoji">🏎️</span>
+        </div>
+
+        <p class="car-event-label">🏁 PRÓXIMO EVENTO</p>
+        <h2 class="car-event-title">EVENTO DE<br><span>CARROS</span></h2>
+        <p class="car-event-desc">
+          O próximo rolê de carros já vem aí! <br>
+          Pra nos lembrar o quanto isso nos conecta e o quanto gostamos de
+          carro, nesse dia eu vou acelerar e vc não vai poder dizer nada
+          viu...escutando as nossas musicas do nosso jeitinho, obvio o acelero e
+          permitido com tudo dentro da lei
+        </p>
+
+        <!-- Data destaque -->
+        <div style="margin-bottom: 28px">
+          <div class="car-event-date-badge">📅 &nbsp; 27 DE JUNHO DE 2026</div>
+        </div>
+
+        <!-- Barra de progresso até o evento -->
+        <div class="car-progress-wrapper">
+          <div class="car-progress-header">
+            <span>INÍCIO DO ANO</span>
+            <span id="car-progress-pct">89%</span>
+            <span>EVENTO 🏁</span>
+          </div>
+          <div class="car-progress-bar-bg">
+            <div class="car-progress-bar-fill" id="car-progress-fill" style="width: 89%;"></div>
+          </div>
+        </div>
+
+        <!-- Contador regressivo -->
+        <div class="car-countdown-wrapper">
+          <p class="car-countdown-lbl">FALTAM</p>
+          <div class="car-countdown-grid">
+            <div class="car-cd-box">
+              <span class="car-cd-num" id="car-cd-d">19</span>
+              <span class="car-cd-unit">DIAS</span>
+            </div>
+            <div class="car-cd-box">
+              <span class="car-cd-num" id="car-cd-h">20</span>
+              <span class="car-cd-unit">HORAS</span>
+            </div>
+            <div class="car-cd-box">
+              <span class="car-cd-num" id="car-cd-m">47</span>
+              <span class="car-cd-unit">MIN</span>
+            </div>
+            <div class="car-cd-box">
+              <span class="car-cd-num" id="car-cd-s">16</span>
+              <span class="car-cd-unit">SEG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /car-event-inner -->
+    </div>
+    <!-- /EVENTO DE CARROS -->
+
+    <footer>
+      <div style="font-size: 24px; margin-bottom: 10px">❤️</div>
+      Feito com amor · Desde 06/12/2025
+    </footer>
+
+    <script>
+      /* ---- CATÁLOGO ---- */
+      const meses = [
+        {
+          mes: "MÊS 1 ❤️",
+          titulo: "Dezembro — Onde tudo começou",
+          fotos: [
+            {
+              url: "https://i.ibb.co/rRsvrB9B/d0d01428-8e44-479c-a5ec-1c53513d7a71.jpg",
+              desc: "Me apaixonar por você",
+            },
+            {
+              url: "https://i.ibb.co/pjLD44rH/25f23067-39a8-4b53-a5a8-6c563043ef6a.jpg",
+              desc: "Foi a coisa mais fácil",
+            },
+            {
+              url: "https://i.ibb.co/ztvFpbZ/IMG-2488.jpg",
+              desc: "Que eu já fiz na vida",
+            },
+            {
+              url: "https://i.ibb.co/Mxfb2k8q/IMG-2515.jpg",
+              desc: "Não precisei procurar motivos",
+            },
+            {
+              url: "https://i.ibb.co/9XcGwdG/IMG-2603.jpg",
+              desc: "Simplesmente aconteceu",
+            },
+          ],
+        },
+        {
+          mes: "MÊS 2 💕",
+          titulo: "Janeiro — Cada dia mais juntos e grudados",
+          fotos: [
+            {
+              url: "https://i.ibb.co/gbwNLCFS/60d70dd3-876a-449f-8e86-d7ecd7d3158b.jpg",
+              desc: "Aos poucos",
+            },
+            {
+              url: "https://i.ibb.co/1YYpy2RV/3736d8dd-228c-49d5-9e96-93043226baf1.jpg",
+              desc: "Eu fui percebendo",
+            },
+            {
+              url: "https://i.ibb.co/nMVVXwqF/c98e0246-43a2-4cd2-a260-1e244165dfa0.jpg",
+              desc: "Que havia algo diferente",
+            },
+            {
+              url: "https://i.ibb.co/ccM8hNQN/C47-CC234-4-CC3-4-B58-98-AB-6-D1-FC4899-B44.jpg",
+              desc: "Em você",
+            },
+            {
+              url: "https://i.ibb.co/WNs9JPMJ/2b004e80-7c7e-4aaf-9b0e-f1c933d73cb4.jpg",
+              desc: "Não foi pela sua aparência",
+            },
+          ],
+        },
+        {
+          mes: "MÊS 3 🌸",
+          titulo: "Fevereiro — Nossa primeira viagem juntos",
+          fotos: [
+            {
+              url: "https://i.ibb.co/ks4J2CGP/9b1e7421-de39-44bb-a1bc-afb2fa41f61b.jpg",
+              desc: "Nem por algo superficial",
+            },
+            {
+              url: "https://i.ibb.co/zh69tGnJ/bd663998-c10a-4fe4-9743-2521cee66a83.jpg",
+              desc: "Foi pelo seu jeito",
+            },
+            {
+              url: "https://i.ibb.co/sJy3jc66/IMG-3205.jpg",
+              desc: "Pela forma como você fala",
+            },
+            {
+              url: "https://i.ibb.co/N6ktxgb5/IMG-3435.jpg",
+              desc: "E pelo sorriso que sempre consegue iluminar",
+            },
+            {
+              url: "https://i.ibb.co/sdwmVsM1/IMG-3509.jpg",
+              desc: "Até os meus dias mais difíceis",
+            },
+          ],
+        },
+        {
+          mes: "MÊS 4 🌹",
+          titulo:
+            "Março — Mês aonde descobri que não consigo guardar surpresa para você",
+          fotos: [
+            {
+              url: "https://i.ibb.co/tp2c5nxc/3b324810-6c90-4f0c-8367-981831d6fdc8.jpg",
+              desc: "Eu me apaixonei pela pessoa que você é",
+            },
+            {
+              url: "https://i.ibb.co/67R4DJ9f/1a5a36c9-55a8-41fc-b9cf-cd21a7f25793.jpg",
+              desc: "Quando ninguém está olhando",
+            },
+            {
+              url: "https://i.ibb.co/Y71PgVMw/785-DE28-E-B178-4340-9-B5-B-C58-D3-EAB4-D02.jpg",
+              desc: "Pela sua essência",
+            },
+            {
+              url: "https://i.ibb.co/BKBLZ6Mn/446278-F5-BAE5-41-F6-ACC5-AACB6-F0549-BF.jpg",
+              desc: "Pelo seu cuidado",
+            },
+            {
+              url: "https://i.ibb.co/DPRZdkwV/ddcfa594-4dee-4905-9aee-9e95c33535ad.jpg",
+              desc: "Pela calma que você traz quando está por perto",
+            },
+          ],
+        },
+        {
+          mes: "MÊS 5 💖",
+          titulo: "Abril — Não consegui te desgrudar",
+          fotos: [
+            {
+              url: "https://i.ibb.co/VYvWH7CB/IMG-4435.jpg",
+              desc: "Antes mesmo de entender",
+            },
+            {
+              url: "https://i.ibb.co/KzDzxbhx/ba431e5d-4ec2-4f8b-9ae2-cfb4bb97b27f.jpg",
+              desc: "O que estava acontecendo",
+            },
+            {
+              url: "https://i.ibb.co/m54LrVRW/c7491fe3-8e4a-4800-b9e2-7cb424d63541.jpg",
+              desc: "Meu coração já tinha te escolhido",
+            },
+            {
+              url: "https://i.ibb.co/tpsNyWVT/f7ed73f8-91c3-46be-a132-612a4b594307.jpg",
+              desc: "De todos os presentes que a vida poderia me dar",
+            },
+            {
+              url: "https://i.ibb.co/605ywMVN/IMG-4347.jpg",
+              desc: "Foi você quem o meu coração escolheu e escolheria de novo todas as vezes",
+            },
+          ],
+        },
+        {
+          mes: "MÊS 6 🌹",
+          titulo: "Maio — Cada dia mais ansioso pra viver mais ao seu lado",
+          fotos: [
+            {
+              url: "https://i.ibb.co/Z6TRhSc7/9f45f63f-3621-4569-a413-ea0fa957c9a3.jpg",
+              desc: "E o mais bonito de tudo",
+            },
+            {
+              url: "https://i.ibb.co/5hd79DVf/b5c1fbda-7403-4cfd-9b77-b7992cbb5690.jpg",
+              desc: "Seu abraço continua sendo o meu lugar favorito",
+            },
+            {
+              url: "https://i.ibb.co/kshMFjs5/c002801c-a18a-4678-ad76-b915ce99d8c5.jpg",
+              desc: "Seu sorriso ainda consegue mudar o meu dia",
+            },
+            {
+              url: "https://i.ibb.co/dsRVNKxr/IMG-4658.jpg",
+              desc: "E o seu amor continua sendo o melhor presente que a vida me deu",
+            },
+            {
+              url: "https://i.ibb.co/F466Kbxh/Whats-App-Image-2026-05-23-at-17-05-31.jpg",
+              desc: "Porque estar ao seu lado é onde eu sempre quero estar ❤️",
+            },
+          ],
+        },
+        {
+          mes: "🎁 BÔNUS ESPECIAL DAS FOTOS QUE EU MAIS APRECIO! 💝",
+          titulo: "Momentos que é impossivel a gente esquecer",
+          fotos: [
+            {
+              url: "https://i.ibb.co/36nXjmg/IMG-3466.jpg",
+              desc: "Todos os dias admiro sua foto e fico besta com o quão você combina de Amarelo amor",
+            },
+            {
+              url: "https://i.ibb.co/QFYsN2RB/IMG-3760.jpg",
+              desc: "Ver o quanto você fica feliz nas coisas mais simples",
+            },
+            {
+              url: "https://i.ibb.co/N64ZxpFm/84438d73-137e-4ae6-99d1-54f7a4f17dce.jpg",
+              desc: "Nem nos meus maiores sonhos eu imaginava uma pessoa tão perfeita e gostosa assim",
+            },
+            {
+              url: "https://i.ibb.co/r2vJ7gdd/IMG-3290.jpg",
+              desc: "Quero sempre te dizer o quanto eu sou doidinho por você amor",
+            },
+            {
+              url: "https://i.ibb.co/NdsXDnKR/16620497-83dc-4dcd-ab32-20584a40c08c.jpg",
+              desc: "Quero sempre gritar pro mundo inteiro que eu te amo!",
+            },
+          ],
+        },
+      ];
+
+      document.getElementById("catalogo").innerHTML = meses
+        .map(
+          (m) => `
+      <section class="catalog-section">
+        <p class="mes-label">${m.mes}</p>
+        <h2 class="mes-titulo">${m.titulo}</h2>
+        <div class="fotos-row">
+          ${m.fotos
+            .map(
+              (f) =>
+                `<div class="foto-card"><img src="${f.url}" loading="lazy"/><div class="foto-desc">${f.desc}</div></div>`
+            )
+            .join("")}
+        </div>
+      </section>`
+        )
+        .join("");
+
+      document
+        .getElementById("catalogo")
+        .after(document.getElementById("secao-globo"));
+      document
+        .getElementById("secao-globo")
+        .after(document.getElementById("secao-videos"));
+
+      /* ---- GLOBO DE JUNHO ---- */
+      const fotosGlobo = [
+        {
+          url: "https://i.ibb.co/Ps7hxF0M/IMG-5024.jpg",
+          desc: "Feliz Dia dos Namorados, meu amor!",
+        },
+        {
+          url: "https://i.ibb.co/YFg8kLSc/IMG-4928.jpg",
+          desc: "Dia dos Namorados pra mim não é só uma data",
+        },
+        {
+          url: "https://i.ibb.co/5WyCbJmf/0e87f6ea-9fc2-448b-8781-5de13ecc32eb.jpg",
+          desc: "Pra mim é todos os dias",
+        },
+        {
+          url: "https://i.ibb.co/dYPy26x/820d469b-7552-46d1-9f34-dc5798f51130.jpg",
+          desc: "Você é o meu amor",
+        },
+        {
+          url: "https://i.ibb.co/MQjxRKD/3653af1f-c894-4dc1-b5d4-b60c9b3f4148-1.jpg",
+          desc: "você é meu mundo",
+        },
+        {
+          url: "https://i.ibb.co/tw2NxVcF/16e12632-859f-4559-aa50-0652479f6ae8.jpg",
+          desc: "Te amo mais a cada dia",
+        },
+        {
+          url: "https://i.ibb.co/HDvF96qx/b5810651-809c-4cc1-a0e4-cc65b5df96ec.jpg",
+          desc: "Nossa só continua meu amor",
+        },
+        {
+          url: "https://i.ibb.co/9HFN7xNQ/8f99e70b-491b-4546-9eeb-bab104021b80.jpg",
+          desc: "Feliz Dia dos Namorados, amor!",
+        },
+        {
+          url: "https://i.ibb.co/QFKVZ7WM/89201f8d-796d-41f1-9044-5cbc8f31a0bb.jpg",
+          desc: "Nosso primeiro de muitos amor",
+        },
+      ];
+
+      (function () {
+        const inner = document.getElementById("globe-inner");
+        const globeEl = document.getElementById("globe");
+        const SIZE_PHOTO = globeEl.offsetWidth <= 300 ? 100 : 120;
+        const COLS = 3,
+          GAP = 3;
+        const GRID = SIZE_PHOTO * COLS + GAP * (COLS - 1);
+        inner.style.width = GRID + "px";
+        inner.style.height = GRID + "px";
+        inner.style.gridTemplateColumns = `repeat(3, ${SIZE_PHOTO}px)`;
+        const allFotos = [...fotosGlobo, ...fotosGlobo, ...fotosGlobo];
+        allFotos.forEach((f) => {
+          const img = document.createElement("img");
+          img.className = "globe-photo";
+          img.style.width = SIZE_PHOTO + "px";
+          img.style.height = SIZE_PHOTO + "px";
+          img.src = f.url;
+          img.alt = f.desc;
+          img.addEventListener("click", () => mostrarDestaque(f));
+          inner.appendChild(img);
+        });
+        let posX = -(GRID - globeEl.offsetWidth) / 2,
+          posY = -(GRID - globeEl.offsetWidth) / 2;
+        inner.style.transform = `translate(${posX}px,${posY}px)`;
+        let dragging = false,
+          lastX = 0,
+          lastY = 0,
+          velX = 0,
+          velY = 0,
+          animFrame;
+        function clamp(v, min, max) {
+          return Math.max(min, Math.min(max, v));
+        }
+        function applyPos() {
+          const minV = -(GRID - globeEl.offsetWidth);
+          posX = clamp(posX, minV, 0);
+          posY = clamp(posY, minV, 0);
+          inner.style.transform = `translate(${posX}px,${posY}px)`;
+        }
+        globeEl.addEventListener("mousedown", (e) => {
+          dragging = true;
+          lastX = e.clientX;
+          lastY = e.clientY;
+          cancelAnimationFrame(animFrame);
+          velX = velY = 0;
+        });
+        window.addEventListener("mousemove", (e) => {
+          if (!dragging) return;
+          velX = e.clientX - lastX;
+          velY = e.clientY - lastY;
+          posX += velX;
+          posY += velY;
+          lastX = e.clientX;
+          lastY = e.clientY;
+          applyPos();
+        });
+        window.addEventListener("mouseup", () => {
+          if (!dragging) return;
+          dragging = false;
+          inertia();
+        });
+        globeEl.addEventListener(
+          "touchstart",
+          (e) => {
+            dragging = true;
+            lastX = e.touches[0].clientX;
+            lastY = e.touches[0].clientY;
+            cancelAnimationFrame(animFrame);
+            velX = velY = 0;
+          },
+          { passive: true }
+        );
+        globeEl.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!dragging) return;
+            velX = e.touches[0].clientX - lastX;
+            velY = e.touches[0].clientY - lastY;
+            posX += velX;
+            posY += velY;
+            lastX = e.touches[0].clientX;
+            lastY = e.touches[0].clientY;
+            applyPos();
+          },
+          { passive: true }
+        );
+        globeEl.addEventListener("touchend", () => {
+          dragging = false;
+          inertia();
+        });
+        function inertia() {
+          if (Math.abs(velX) < 0.3 && Math.abs(velY) < 0.3) return;
+          velX *= 0.92;
+          velY *= 0.92;
+          posX += velX;
+          posY += velY;
+          applyPos();
+          animFrame = requestAnimationFrame(inertia);
+        }
+        // mostrar última foto ao iniciar
+        mostrarDestaque(fotosGlobo[fotosGlobo.length - 1]);
+      })();
+
+      function mostrarDestaque(f) {
+        const d = document.getElementById("foto-destaque");
+        document.getElementById("destaque-img").src = f.url;
+        document.getElementById("destaque-desc").textContent = f.desc;
+        d.classList.add("visivel");
+        d.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      /* ---- CONTADOR JUNTOS ---- */
+      function tick() {
+        const diff = Date.now() - new Date("2025-12-06T00:00:00").getTime();
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById(
+          "counter"
+        ).textContent = `${d}d • ${h}h • ${m}m • ${s}s ❤️`;
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      /* ---- ESTRESSE ---- */
+      let nivelEstresse = 0;
+      const msgEstresse = [
+        "Tudo tranquilo por aqui... 😌",
+        "Levemente irritada... 🙄",
+        "Já tá esquentando... 😒",
+        "Perigoso continuar! 😤",
+        "MODO EXPLOSÃO ATIVADO! 🔥😡",
+      ];
+      function atualizarEstresse() {
+        document.getElementById("estresse-nivel").textContent =
+          nivelEstresse + "%";
+        document.getElementById("estresse-barra").style.width =
+          nivelEstresse + "%";
+        const idx = Math.min(Math.floor(nivelEstresse / 25), 4);
+        document.getElementById("estresse-status").textContent =
+          msgEstresse[idx];
+        document.getElementById("estresse-msg").style.display = "none";
+      }
+      function aumentarEstresse() {
+        if (nivelEstresse < 100)
+          nivelEstresse = Math.min(nivelEstresse + 20, 100);
+        atualizarEstresse();
+      }
+      function zerarEstresse() {
+        document.getElementById("estresse-msg").style.display = "block";
+        nivelEstresse = Math.min(nivelEstresse + 10, 100);
+        document.getElementById("estresse-nivel").textContent =
+          nivelEstresse + "%";
+        document.getElementById("estresse-barra").style.width =
+          nivelEstresse + "%";
+        const idx = Math.min(Math.floor(nivelEstresse / 25), 4);
+        document.getElementById("estresse-status").textContent =
+          msgEstresse[idx];
+      }
+
+      /* ---- RASPADINHA ---- */
+      (function () {
+        const canvas = document.getElementById("scratch-canvas");
+        const ctx = canvas.getContext("2d");
+        const wrapper = document.getElementById("scratch-wrapper");
+        const progressBar = document.getElementById("scratch-progress");
+        const progressLabel = document.getElementById("scratch-label");
+        const mensagem = document.getElementById("raspadinha-msg");
+        let isDrawing = false,
+          revealed = false;
+        function initCanvas() {
+          const w = wrapper.offsetWidth,
+            h = wrapper.offsetHeight;
+          canvas.width = w;
+          canvas.height = h;
+          const grad = ctx.createLinearGradient(0, 0, w, h);
+          grad.addColorStop(0, "#2a0018");
+          grad.addColorStop(0.5, "#1a000f");
+          grad.addColorStop(1, "#2a0018");
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, w, h);
+          ctx.fillStyle = "rgba(255,0,79,0.12)";
+          ctx.font = "22px serif";
+          for (let x = 20; x < w; x += 44)
+            for (let y = 30; y < h; y += 44) ctx.fillText("❤", x, y);
+          ctx.fillStyle = "rgba(255,255,255,0.9)";
+          ctx.font = `bold ${Math.round(w * 0.055)}px Inter,sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("RASPE PARA REVELAR", w / 2, h / 2 - 18);
+          ctx.font = `${Math.round(w * 0.09)}px serif`;
+          ctx.fillText("💝", w / 2, h / 2 + 28);
+          revealed = false;
+          progressBar.style.width = "0%";
+          progressLabel.textContent = "Raspe para revelar... ✨";
+          mensagem.classList.remove("visivel");
+        }
+        function getPos(e) {
+          const rect = canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width,
+            scaleY = canvas.height / rect.height;
+          if (e.touches)
+            return {
+              x: (e.touches[0].clientX - rect.left) * scaleX,
+              y: (e.touches[0].clientY - rect.top) * scaleY,
+            };
+          return {
+            x: (e.clientX - rect.left) * scaleX,
+            y: (e.clientY - rect.top) * scaleY,
+          };
+        }
+        function scratch(pos) {
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.beginPath();
+          ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalCompositeOperation = "source-over";
+        }
+        function checkReveal() {
+          if (revealed) return;
+          const sample = ctx.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          ).data;
+          let transparent = 0;
+          for (let i = 3; i < sample.length; i += 16)
+            if (sample[i] < 128) transparent++;
+          const pct = Math.round((transparent / (sample.length / 16)) * 100);
+          progressBar.style.width = Math.min(pct, 100) + "%";
+          if (pct >= 60) {
+            progressLabel.textContent = "Revelado! 🥰";
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.fillStyle = "rgba(0,0,0,1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.globalCompositeOperation = "source-over";
+            revealed = true;
+            canvas.style.pointerEvents = "none";
+            mensagem.classList.add("visivel");
+          } else {
+            progressLabel.textContent = `${pct}% raspado... continue! ✨`;
+          }
+        }
+        canvas.addEventListener("mousedown", (e) => {
+          isDrawing = true;
+          scratch(getPos(e));
+        });
+        canvas.addEventListener("mousemove", (e) => {
+          if (!isDrawing) return;
+          scratch(getPos(e));
+          checkReveal();
+        });
+        canvas.addEventListener("mouseup", () => {
+          isDrawing = false;
+          checkReveal();
+        });
+        canvas.addEventListener("mouseleave", () => {
+          isDrawing = false;
+        });
+        canvas.addEventListener(
+          "touchstart",
+          (e) => {
+            e.preventDefault();
+            isDrawing = true;
+            scratch(getPos(e));
+          },
+          { passive: false }
+        );
+        canvas.addEventListener(
+          "touchmove",
+          (e) => {
+            e.preventDefault();
+            if (!isDrawing) return;
+            scratch(getPos(e));
+            checkReveal();
+          },
+          { passive: false }
+        );
+        canvas.addEventListener("touchend", () => {
+          isDrawing = false;
+          checkReveal();
+        });
+        const photo = document.getElementById("scratch-photo");
+        if (photo.complete) setTimeout(initCanvas, 100);
+        else photo.addEventListener("load", () => setTimeout(initCanvas, 100));
+        window.resetScratch = function () {
+          canvas.style.pointerEvents = "auto";
+          initCanvas();
+        };
+        window.addEventListener("resize", () => {
+          if (!revealed) initCanvas();
+        });
+      })();
+
+      /* ---- CONTADOR REGRESSIVO — EVENTO DE CARROS 27/06/2026 ---- */
+      (function () {
+        const target = new Date("2026-06-27T00:00:00").getTime();
+        // Para a barra de progresso: usa 01/01/2026 como início
+        const progressStart = new Date("2026-01-01T00:00:00").getTime();
+        const progressTotal = target - progressStart;
+
+        function pad(n) {
+          return String(n).padStart(2, "0");
+        }
+
+        function tickCar() {
+          const now = Date.now();
+          const diff = target - now;
+
+          if (diff <= 0) {
+            document.getElementById("car-cd-d").textContent = "00";
+            document.getElementById("car-cd-h").textContent = "00";
+            document.getElementById("car-cd-m").textContent = "00";
+            document.getElementById("car-cd-s").textContent = "00";
+            document.getElementById("car-progress-fill").style.width = "100%";
+            document.getElementById("car-progress-pct").textContent =
+              "É HOJE! 🏁";
+            return;
+          }
+
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor((diff % 86400000) / 3600000);
+          const m = Math.floor((diff % 3600000) / 60000);
+          const s = Math.floor((diff % 60000) / 1000);
+
+          document.getElementById("car-cd-d").textContent = pad(d);
+          document.getElementById("car-cd-h").textContent = pad(h);
+          document.getElementById("car-cd-m").textContent = pad(m);
+          document.getElementById("car-cd-s").textContent = pad(s);
+
+          // barra de progresso
+          const elapsed = now - progressStart;
+          const pct = Math.min(
+            100,
+            Math.max(0, Math.round((elapsed / progressTotal) * 100))
+          );
+          document.getElementById("car-progress-fill").style.width = pct + "%";
+          document.getElementById("car-progress-pct").textContent = pct + "%";
+        }
+
+        tickCar();
+        setInterval(tickCar, 1000);
+      })();
+    </script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/vendors~app~codemirror-editor~monaco-editor~sandbox.f80b3d7b3.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/common-sandbox.9e074986a.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/vendors~embed~sandbox.95f5cf495.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/vendors~sandbox.d5ded56b5.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/default~app~embed~sandbox.60fd4feb6.chunk.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/sandbox.39927e00d.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/banner.d9cb10a38.js.transferir"></script>
+    <script crossorigin="" type="text/javascript" src="./Our Love Story ❤️ finalizado_files/watermark-button.eeb14a97b.js.transferir"></script>
+  
+
+<iframe id="sb__open-sandbox67" style="
+      position: fixed;
+      margin: 0;
+      padding: 0;
+      bottom: 16px;
+      right: 16px;
+      border: none;
+      width: 118px;
+      height: 36px;
+      z-index: 9999999999999;
+    " src="./Our Love Story ❤️ finalizado_files/saved_resource.html"></iframe></body></html>
